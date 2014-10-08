@@ -10,7 +10,7 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: bailinphil
   productName: space-golf
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -156,7 +156,8 @@ PlayerSettings:
   psp2PackagedResourcesPath: 
   flashStrippingLevel: 2
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: 
   metroPackageName: space-golf
   metroPackageLogo: 
   metroPackageLogo140: 
