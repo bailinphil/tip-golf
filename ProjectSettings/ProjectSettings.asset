@@ -66,7 +66,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: com.bailinphil.tip-golf
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 414e78007a2b0498cae56a69f0105b48
@@ -90,13 +90,19 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 0}
-  iPhoneHighResSplashScreen: {fileID: 0}
-  iPhoneTallHighResSplashScreen: {fileID: 0}
-  iPadPortraitSplashScreen: {fileID: 0}
-  iPadHighResPortraitSplashScreen: {fileID: 0}
-  iPadLandscapeSplashScreen: {fileID: 0}
-  iPadHighResLandscapeSplashScreen: {fileID: 0}
+  iPhoneSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd, type: 3}
+  iPhoneHighResSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
+  iPadPortraitSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
+  iPadLandscapeSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+    type: 3}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
@@ -105,7 +111,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: e4b08af69cda84590b5ad8abd7e0fb86, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
