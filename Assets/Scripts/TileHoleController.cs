@@ -7,6 +7,7 @@ using System.IO;
 public class TileHoleController : HoleController
 {
 
+	public string holeURL;
 		public GameObject flat2x2;
 		public GameObject sidePlusX;
 		public GameObject sideMinusX;
@@ -17,16 +18,16 @@ public class TileHoleController : HoleController
 		public GameObject cornerMinusXPlusZ;
 		public GameObject cornerMinusXMinusZ;
 
-		void Start ()
+		IEnumerator Start ()
 		{
 			base.Start ();
-/*			var www = new WWW ("Andrews3.xml");
+			var www = new WWW (holeURL);
 			yield return www;
 			using (XmlReader reader = XmlReader.Create(new StringReader(www.text))) {
 					reader.ReadToFollowing ("tile");
 				
 			}
-*/
+
 			var course = new CourseTile[]  { new CourseTile (flat2x2, 0, 0)
 			       , new CourseTile (sidePlusX, 2, 0)
 			       , new CourseTile (sidePlusZ, 0, 2)
