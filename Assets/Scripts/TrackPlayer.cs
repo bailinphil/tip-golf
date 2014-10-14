@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TrackPlayer : MonoBehaviour {
+namespace TipGolf
+{
+public class TrackPlayer : MonoBehaviour
+{
 
 	public GameObject player;
 	private Vector3 offset;
 
-	void Start () {
+	void Start()
+	{
 		offset = transform.localPosition - player.transform.localPosition;
 	}
 	
-	void LateUpdate () {
+	void LateUpdate()
+	{
 		transform.localPosition = player.transform.localPosition + offset;
 	}
+}
 }

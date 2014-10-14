@@ -2,10 +2,15 @@
 using System.Collections;
 using Lib;
 
-public class BoundsTrigger : MonoBehaviour {
+namespace TipGolf
+{
+public class BoundsTrigger : MonoBehaviour
+{
 
-	void OnTriggerExit( Collider other ){
-		Messenger.Broadcast( "OutOfBounds" );
-		Application.LoadLevel( Application.loadedLevel );
+	void OnTriggerExit(Collider other)
+	{
+		Messenger.Broadcast("OutOfBounds");
+		Application.LoadLevel(Application.loadedLevel);
 	}
+}
 }
