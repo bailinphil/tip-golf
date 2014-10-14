@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Andrews3">
+	<tile type="flat2x2"            x="0"  z="0"           />
+	<tile type="sidePlusZ"          x="0"  z="2"           />
+	<tile type="sideMinusX"         x="-2" z="0"           />
+	<tile type="sidePlusX"          x="2"  z="0"           />
+	<tile type="sideMinusZ"         x="0"  z="-2"          />
+	<tile type="cornerPlusXPlusZ"   x="2"  z="2"           />
+	<tile type="cornerPlusXMinusZ"  x="2"  z="-2"          />
+	<tile type="cornerMinusXPlusZ"  x="-2" z="2"           />
+	<tile type="sideMinusX"         x="-2" z="-2"          />
+	<tile type="sideMinusX"         x="-2" z="-4"          />
+	<tile type="flat2x2"            x="0"  z="-4"          />
+	<tile type="sidePlusX"          x="2"  z="-4"          />
+	<tile type="sideMinusX"         x="-2" z="-6"          />
+	<tile type="flat2x2"            x="0"  z="-6"          />
+	<tile type="sidePlusX"          x="2"  z="-6"          />
+	<tile type="cornerMinusXMinusZ" x="-2" z="-8"          />
+	<tile type="sideMinusZ"         x="0"  z="-8"          />
+	<tile type="sidePlusX"          x="2"  z="-8"          />
+</hole>

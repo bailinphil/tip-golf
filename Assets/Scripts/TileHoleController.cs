@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Xml;
 using System.IO;
@@ -24,36 +25,66 @@ public class TileHoleController : HoleController
 		base.Start();
 		var www = new WWW(holeURL);
 		yield return www;
+		
+		var courseRoot = GameObject.FindWithTag("CourseBase");
 		using(XmlReader reader = XmlReader.Create(new StringReader(www.text))) {
-			reader.ReadToFollowing("tile");
-				
+			var tileCounter = 0;
+			while(reader.ReadToFollowing("tile")) {
+				tileCounter += 1;
+				var tileType = reader.GetAttribute("type");
+				var tileX = reader.GetAttribute("x");
+				var tileY = reader.GetAttribute("y");
+				var tileZ = reader.GetAttribute("z");
+				float x = 0.0f;
+				float y = 0.0f;
+				float z = 0.0f;
+				if(tileType == null || !float.TryParse(tileX, out x) || !float.TryParse(tileZ, out z)) {
+					throw new ArgumentException("can't parse the tile element, #" + tileCounter);
+				} else {
+					var tile = getTileForType(tileType);
+					var tilePlacement = new CourseTile(tile, x, z);
+					if(float.TryParse(tileY, out y)) {
+						tilePlacement = new CourseTile(tile, x, y, z);
+					}
+					
+					var newTile = (GameObject)Instantiate(tilePlacement.tile, tilePlacement.location, Quaternion.identity);
+					newTile.transform.parent = courseRoot.transform;
+				}
+			}
 		}
-
-		var course = new CourseTile[]  { new CourseTile(flat2x2, 0, 0)
-			       , new CourseTile(sidePlusX, 2, 0)
-			       , new CourseTile(sidePlusZ, 0, 2)
-			       , new CourseTile(sideMinusX, -2, 0)
-			       , new CourseTile(sideMinusZ, 0, -2)
-			       , new CourseTile(cornerPlusXPlusZ, 2, 2)
-			       , new CourseTile(cornerPlusXMinusZ, 2, -2)
-		         , new CourseTile(cornerMinusXPlusZ, -2, 2)
-		         , new CourseTile(sideMinusX, -2, -2)
-			, new CourseTile(sideMinusX, -2, -4)
-			, new CourseTile(flat2x2, 0, -4)
-			, new CourseTile(sidePlusX, 2, -4)
-			, new CourseTile(sideMinusX, -2, -6)
-			, new CourseTile(flat2x2, 0, -6)
-			, new CourseTile(sidePlusX, 2, -6)
-			, new CourseTile(cornerMinusXMinusZ, -2, -8)
-			, new CourseTile(sideMinusZ, 0, -8)
-			, new CourseTile(sidePlusX, 2, -8)
-		};
-		foreach(var placement in course) {
-			var t = (GameObject)Instantiate(placement.tile, placement.location, Quaternion.identity);
-			var courseRoot = GameObject.FindWithTag("CourseBase");
-			t.transform.parent = courseRoot.transform;
-		}
-
 	}
+	
+	public void Update()
+	{
+		//print(Time.time);
+	}
+		
+	
+	private GameObject getTileForType(string tileType)
+	{
+		switch(tileType) {
+		case "flat2x2":
+			return flat2x2;
+		case "sidePlusX":
+			return sidePlusX;
+		case "sideMinusX":
+			return sideMinusX;
+		case "sidePlusZ":
+			return sidePlusZ;
+		case "sideMinusZ":
+			return sideMinusZ;
+		case "cornerPlusXPlusZ":
+			return cornerPlusXPlusZ;
+		case "cornerPlusXMinusZ":
+			return cornerPlusXMinusZ;
+		case "cornerMinusXPlusZ":
+			return cornerMinusXPlusZ;
+		case "cornerMinusXMinusZ":
+			return cornerMinusXMinusZ;
+		default:
+			throw new ArgumentException(String.Format("Tile type {0} not recognized", tileType));
+		}
+	}
+
 }
 }

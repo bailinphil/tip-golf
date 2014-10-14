@@ -455,7 +455,7 @@ MonoBehaviour:
   nextLevel: MainMenu
   parTime: 0
   holeName: Andrews3
-  holeURL: file:///Users/plight/code/tip-golf/Assets/Scripts/Andrews3.xml
+  holeURL: file:///Users/plight/code/tip-golf/Assets/Scripts/Config/StAndrews/Andrews3.xml
   flat2x2: {fileID: 100000, guid: 0430a42f76dbe400d8202ac070639980, type: 2}
   sidePlusX: {fileID: 100004, guid: db93a0fc1be8e48f491b3da7fe816d1f, type: 2}
   sideMinusX: {fileID: 100004, guid: 1ad05c884fd3a4f498e7fa372e5669ad, type: 2}
