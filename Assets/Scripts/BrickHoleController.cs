@@ -19,7 +19,7 @@ public class BrickHoleController : HoleController {
 	void Start(){
 		base.Start();
 
-		course = new CourseBrick[] { new CourseBrick( flat2x2, 0, 0 )
+		course = new CourseBrick[]  { new CourseBrick( flat2x2, 0, 0 )
 			, new CourseBrick( sidePlusX, 2, 0)
 			, new CourseBrick( sidePlusZ, 0, 2)
 			, new CourseBrick( sideMinusX, -2, 0)
@@ -27,7 +27,16 @@ public class BrickHoleController : HoleController {
 			, new CourseBrick( cornerPlusXPlusZ, 2, 2)
 			, new CourseBrick( cornerPlusXMinusZ, 2, -2)
 			, new CourseBrick( cornerMinusXPlusZ,-2, 2)
-			, new CourseBrick( cornerMinusXMinusZ, -2, -2)
+			, new CourseBrick( sideMinusX, -2, -2)
+			, new CourseBrick( sideMinusX, -2, -4)
+			, new CourseBrick( flat2x2, 0, -4 )
+			, new CourseBrick( sidePlusX, 2, -4 )
+			, new CourseBrick( sideMinusX, -2, -6)
+			, new CourseBrick( flat2x2, 0, -6 )
+			, new CourseBrick( sidePlusX, 2, -6 )
+			, new CourseBrick( cornerMinusXMinusZ, -2, -8 )
+			, new CourseBrick( sideMinusZ, 0, -8 )
+			, new CourseBrick( sidePlusX, 2, -8 )
 		};
 		foreach( var placement in course ){
 			var t = (GameObject) Instantiate( placement.brick, placement.location, Quaternion.identity );

@@ -11,8 +11,8 @@ using System;
 using UnityEngine;
 public class CourseBrick
 {
-	public GameObject brick {get;set;}
-	public Vector3 location {get;set;}
+	public GameObject brick;
+	public Vector3 location;
 
 	public CourseBrick( GameObject obj, float x, float z ){
 		brick = obj;
