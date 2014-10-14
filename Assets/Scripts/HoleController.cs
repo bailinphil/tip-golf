@@ -11,7 +11,7 @@ public class HoleController : MonoBehaviour {
 	private float timeStarted;
 
 	// Use this for initialization
-	void Start () 
+	public void Start () 
 	{
 		PlayerRound.CurrentRound.playHole( holeName, parTime );
 		Messenger.AddListener( "OutOfBounds", OnOutOfBounds );
