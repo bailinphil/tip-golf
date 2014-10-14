@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bb43dd5ec2d4bbbb9b19a5eb0b45ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: MainMenu
+  nextLevel: Andrews3
   parTime: 2
   holeName: The Bend
 --- !u!4 &149875656
@@ -510,7 +510,7 @@ GameObject:
   - 4: {fileID: 1163409115}
   m_Layer: 0
   m_Name: Course
-  m_TagString: Untagged
+  m_TagString: CourseBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

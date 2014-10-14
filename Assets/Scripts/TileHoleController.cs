@@ -10,6 +10,7 @@ public class TileHoleController : HoleController
 {
 
 	public string holeURL;
+	public GameObject goal;
 	public GameObject flat2x2;
 	public GameObject sidePlusX;
 	public GameObject sideMinusX;
@@ -19,6 +20,8 @@ public class TileHoleController : HoleController
 	public GameObject cornerPlusXMinusZ;
 	public GameObject cornerMinusXPlusZ;
 	public GameObject cornerMinusXMinusZ;
+	
+	private GameObject courseRoot;
 
 	IEnumerator Start()
 	{
@@ -26,43 +29,67 @@ public class TileHoleController : HoleController
 		var www = new WWW(holeURL);
 		yield return www;
 		
-		var courseRoot = GameObject.FindWithTag("CourseBase");
+		courseRoot = GameObject.FindWithTag("CourseBase");
 		using(XmlReader reader = XmlReader.Create(new StringReader(www.text))) {
-			var tileCounter = 0;
-			while(reader.ReadToFollowing("tile")) {
-				tileCounter += 1;
-				var tileType = reader.GetAttribute("type");
-				var tileX = reader.GetAttribute("x");
-				var tileY = reader.GetAttribute("y");
-				var tileZ = reader.GetAttribute("z");
-				float x = 0.0f;
-				float y = 0.0f;
-				float z = 0.0f;
-				if(tileType == null || !float.TryParse(tileX, out x) || !float.TryParse(tileZ, out z)) {
-					throw new ArgumentException("can't parse the tile element, #" + tileCounter);
-				} else {
-					var tile = getTileForType(tileType);
-					var tilePlacement = new CourseTile(tile, x, z);
-					if(float.TryParse(tileY, out y)) {
-						tilePlacement = new CourseTile(tile, x, y, z);
-					}
-					
-					var newTile = (GameObject)Instantiate(tilePlacement.tile, tilePlacement.location, Quaternion.identity);
-					newTile.transform.parent = courseRoot.transform;
-				}
+			if(reader.ReadToFollowing("hole")) {
+				nextLevel = reader.GetAttribute("nextLevel");
+				holeName = reader.GetAttribute("name");
+				loadTiles(reader);
+			} else {
+				throw new ArgumentException("Can't find any parts in " + holeURL);
 			}
 		}
 	}
 	
-	public void Update()
+	private void loadTiles(XmlReader reader)
 	{
-		//print(Time.time);
+		var tileCounter = 0;
+		while(reader.ReadToFollowing("tile")) {
+			tileCounter += 1;
+			var tileType = reader.GetAttribute("type");
+			makeHolePart(tileType, reader);
+		}
 	}
-		
 	
+	private void loadGoal(XmlReader reader)
+	{
+		if(reader.ReadToFollowing("goal")) {
+			makeHolePart("goal", reader);
+		} else {
+			throw new ArgumentException("can't find the goal in the course, " + holeURL);
+		}
+	}
+
+	private void makeHolePart(string part, XmlReader reader)
+	{
+		float x = 0.0f, y = 0.0f, z = 0.0f;
+		readXYZAttributes(reader, out x, out y, out z);
+		var newTile = (GameObject)Instantiate(getTileForType(part), new Vector3(x, y, z), Quaternion.identity);
+		newTile.transform.parent = courseRoot.transform;
+	}
+
+	private void readXYZAttributes(XmlReader reader, out float x, out float y, out float z)
+	{
+		var xStr = reader.GetAttribute("x");
+		var yStr = reader.GetAttribute("y");
+		var zStr = reader.GetAttribute("z");
+		x = 0.0f;
+		y = 0.0f;
+		z = 0.0f;
+		// we always need an X and a Z coordinate, but can assume 0 for y most of the time.
+		if(!float.TryParse(xStr, out x) || !float.TryParse(zStr, out z)) {
+			throw new ArgumentException("can't parse X or Z in element");
+		}
+		if(!float.TryParse(yStr, out y)) {
+			y = 0.0f;
+		}
+	}
+									
 	private GameObject getTileForType(string tileType)
 	{
 		switch(tileType) {
+		case "goal":
+			return goal;
 		case "flat2x2":
 			return flat2x2;
 		case "sidePlusX":
