@@ -20,17 +20,21 @@ public class TileHoleController : HoleController
 	public GameObject cornerPlusXMinusZ;
 	public GameObject cornerMinusXPlusZ;
 	public GameObject cornerMinusXMinusZ;
-	
 	private GameObject courseRoot;
 
-	IEnumerator Start()
+	void Start()
 	{
 		base.Start();
-		var www = new WWW(holeURL);
-		yield return www;
+		/*string configStr = "";
+		var configPath = System.IO.Path.Combine(Application.dataPath, "Resources/StAndrews/Andrews3.xml");
+		configStr = System.IO.File.ReadAllText(configPath);
+		Debug.Log(configPath); 
+		*/
 		
+		var configStr = Resources.Load("StAndrews/Andrews3").ToString();
+
 		courseRoot = GameObject.FindWithTag("CourseBase");
-		using(XmlReader reader = XmlReader.Create(new StringReader(www.text))) {
+		using(XmlReader reader = XmlReader.Create(new StringReader(configStr))) {
 			if(reader.ReadToFollowing("hole")) {
 				nextLevel = reader.GetAttribute("nextLevel");
 				holeName = reader.GetAttribute("name");
@@ -44,19 +48,10 @@ public class TileHoleController : HoleController
 	private void loadTiles(XmlReader reader)
 	{
 		var tileCounter = 0;
-		while(reader.ReadToFollowing("tile")) {
+		while(reader.ReadToFollowing("part")) {
 			tileCounter += 1;
 			var tileType = reader.GetAttribute("type");
 			makeHolePart(tileType, reader);
-		}
-	}
-	
-	private void loadGoal(XmlReader reader)
-	{
-		if(reader.ReadToFollowing("goal")) {
-			makeHolePart("goal", reader);
-		} else {
-			throw new ArgumentException("can't find the goal in the course, " + holeURL);
 		}
 	}
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Andrews3" nextLevel="MainMenu">
+	<part type="flat2x2"            x="0"  z="0"           />
+	<part type="sidePlusZ"          x="0"  z="2"           />
+	<part type="sideMinusX"         x="-2" z="0"           />
+	<part type="sidePlusX"          x="2"  z="0"           />
+	<part type="sideMinusZ"         x="0"  z="-2"          />
+	<part type="cornerPlusXPlusZ"   x="2"  z="2"           />
+	<part type="cornerPlusXMinusZ"  x="2"  z="-2"          />
+	<part type="cornerMinusXPlusZ"  x="-2" z="2"           />
+	<part type="sideMinusX"         x="-2" z="-2"          />
+	<part type="sideMinusX"         x="-2" z="-4"          />
+	<part type="flat2x2"            x="0"  z="-4"          />
+	<part type="sidePlusX"          x="2"  z="-4"          />
+	<part type="sideMinusX"         x="-2" z="-6"          />
+	<part type="flat2x2"            x="0"  z="-6"          />
+	<part type="sidePlusX"          x="2"  z="-6"          />
+	<part type="cornerMinusXMinusZ" x="-2" z="-8"          />
+	<part type="sideMinusZ"         x="0"  z="-8"          />
+	<part type="sidePlusX"          x="2"  z="-8"          />
+	<part type="goal"               x="2"  z="-9" y="1"    />
+</hole>
