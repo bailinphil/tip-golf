@@ -18,9 +18,11 @@ class Placement:
 		self.partName = shorthandToPrefabNames[tileType]
 		self.x = 0
 		self.z = 0
+		self.y = 0
 	
 	def __str__(self):
-		return """<part type="%s" x="%i" z="%i" />""" % ( self.partName, self.x, self.z )
+		outStr = """<part type="%s" x="%i" y="%i" z="%i" />"""
+		return outStr % ( self.partName, self.x, self.y, self.z )
 	
 	def __cmp__(self, other):
 		if self.x < other.x:
@@ -47,7 +49,7 @@ def main():
 			raise e
 
 def writeXMLForCsv( inFileName ):
-	outFileName = inFileName.replace( ".csv", ".xml" )
+	outFileName = "../../Scratch/" + inFileName.replace( ".csv", ".xml" )
 	with open(outFileName, "w") as outFile:
 		rows = []			
 		with open(inFileName, 'rU') as csvFile:
@@ -92,6 +94,7 @@ def computePlacementsFromRows( rows ):
 					p2 = Placement( value )
 					p2.partName = "goal"
 					p2.x = 2 * (colIter - startCol)
+					p2.y = 1
 					p2.z = 2 * (startRow - rowIter)
 					result.append( p2 )
 				
