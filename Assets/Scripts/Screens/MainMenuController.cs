@@ -8,11 +8,15 @@ public class MainMenuController : MonoBehaviour
 {
 
 	public GUIText timeText;
-	private string[,] currentCourse = new string[4, 3] { 
+	private string[,] currentCourse = new string[,] { 
 	      { "TileHole", "StAndrews/Andrews1", "Zig-Zag Box" }
-			, { "TileHole", "StAndrews/Andrews3", "Right Bend" }
-			, { "TileHole", "StAndrews/Andrews3", "Alley Hook" }
-			, { "TileHole", "StAndrews/Andrews3", "Final Hole" }
+	//, { "TileHole", "StAndrews/Right-Corner", "Right Corner" }
+	    , { "TileHole", "StAndrews/Inchworm", "Inchworm" }
+	    , { "TileHole", "StAndrews/Long-Run", "Long Run" }
+	    , { "TileHole", "StAndrews/J", "J" }
+	    , { "TileHole", "StAndrews/Bonk-Line", "Bonk/Line" }
+	    , { "TileHole", "StAndrews/Gambit", "Gambit" }
+	    , { "TileHole", "StAndrews/Maze", "Maze" }
 			};
 
 	void Start()

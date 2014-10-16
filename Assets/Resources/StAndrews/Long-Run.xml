@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Long-Run.csv">
+	<part type="cornerMinusXPlusZ" x="0" z="0" />
+	<part type="sideMinusX" x="0" z="-2" />
+	<part type="sideMinusX" x="0" z="-4" />
+	<part type="cornerMinusXMinusZ" x="0" z="-6" />
+	<part type="sideMinusX" x="0" z="-8" />
+	<part type="sideMinusX" x="0" z="-10" />
+	<part type="sideMinusX" x="0" z="-12" />
+	<part type="sideMinusX" x="0" z="-14" />
+	<part type="sideMinusX" x="0" z="-16" />
+	<part type="sideMinusX" x="0" z="-18" />
+	<part type="cornerMinusXMinusZ" x="0" z="-20" />
+	<part type="sideMinusX" x="0" z="-22" />
+	<part type="sideMinusX" x="0" z="-24" />
+	<part type="flat2x2" x="0" z="-26" />
+	<part type="sideMinusX" x="0" z="-28" />
+	<part type="sideMinusX" x="0" z="-30" />
+	<part type="sideMinusX" x="0" z="-32" />
+	<part type="sideMinusX" x="0" z="-34" />
+	<part type="flat2x2" x="0" z="-36" />
+	<part type="cornerPlusXPlusZ" x="2" z="0" />
+	<part type="sidePlusX" x="2" z="-2" />
+	<part type="sidePlusX" x="2" z="-4" />
+	<part type="sidePlusX" x="2" z="-6" />
+	<part type="sidePlusX" x="2" z="-8" />
+	<part type="sidePlusX" x="2" z="-10" />
+	<part type="sidePlusX" x="2" z="-12" />
+	<part type="cornerPlusXMinusZ" x="2" z="-14" />
+	<part type="sidePlusX" x="2" z="-16" />
+	<part type="sidePlusX" x="2" z="-18" />
+	<part type="flat2x2" x="2" z="-20" />
+	<part type="sidePlusX" x="2" z="-22" />
+	<part type="sidePlusX" x="2" z="-24" />
+	<part type="cornerPlusXMinusZ" x="2" z="-26" />
+	<part type="flat2x2" x="2" z="-28" />
+	<part type="flat2x2" x="2" z="-30" />
+	<part type="flat2x2" x="2" z="-32" />
+	<part type="sidePlusX" x="2" z="-34" />
+	<part type="sideMinusZ" x="2" z="-36" />
+	<part type="flat2x2" x="4" z="-34" />
+	<part type="goal" x="4" z="-34" />
+	<part type="sidePlusX" x="4" z="-36" />
+</hole>

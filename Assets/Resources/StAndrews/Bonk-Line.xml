@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Bonk-Line.csv">
+	<part type="cornerMinusXPlusZ" x="-6" z="-6" />
+	<part type="flat2x2" x="-6" z="-8" />
+	<part type="goal" x="-6" z="-8" />
+	<part type="cornerMinusXPlusZ" x="-4" z="-4" />
+	<part type="cornerPlusXMinusZ" x="-4" z="-6" />
+	<part type="cornerMinusXPlusZ" x="-2" z="-2" />
+	<part type="cornerPlusXMinusZ" x="-2" z="-4" />
+	<part type="cornerMinusXPlusZ" x="0" z="0" />
+	<part type="sideMinusZ" x="0" z="-2" />
+	<part type="cornerPlusXPlusZ" x="2" z="0" />
+	<part type="sideMinusZ" x="2" z="-2" />
+	<part type="flat2x2" x="4" z="-2" />
+	<part type="flat2x2" x="4" z="-4" />
+	<part type="flat2x2" x="4" z="-6" />
+	<part type="flat2x2" x="4" z="-8" />
+	<part type="flat2x2" x="4" z="-10" />
+	<part type="flat2x2" x="4" z="-12" />
+	<part type="flat2x2" x="4" z="-14" />
+	<part type="flat2x2" x="4" z="-16" />
+	<part type="goal" x="4" z="-16" />
+</hole>
