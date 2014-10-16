@@ -30,8 +30,8 @@ public class TileHoleController : HoleController
 		configStr = System.IO.File.ReadAllText(configPath);
 		Debug.Log(configPath); 
 		*/
-		
-		var configStr = Resources.Load("StAndrews/Andrews3").ToString();
+		var resourceName = PlayerRound.CurrentRound.getCurrentHoleConfigResource();
+		var configStr = Resources.Load(resourceName).ToString();
 
 		courseRoot = GameObject.FindWithTag("CourseBase");
 		using(XmlReader reader = XmlReader.Create(new StringReader(configStr))) {

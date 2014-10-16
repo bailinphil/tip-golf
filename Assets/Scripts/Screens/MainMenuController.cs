@@ -8,6 +8,12 @@ public class MainMenuController : MonoBehaviour
 {
 
 	public GUIText timeText;
+	private string[,] currentCourse = new string[4, 3] { 
+	      { "TileHole", "StAndrews/Andrews3", "Zig-Zag Box" }
+			, { "TileHole", "StAndrews/Andrews3", "Right Bend" }
+			, { "TileHole", "StAndrews/Andrews3", "Alley Hook" }
+			, { "TileHole", "StAndrews/Andrews3", "Final Hole" }
+			};
 
 	void Start()
 	{
@@ -20,9 +26,9 @@ public class MainMenuController : MonoBehaviour
 	void OnGUI()
 	{
 		if(GUI.Button(new Rect(60, 140, 300, 60), "New Game")) {
-			var round = new PlayerRound("St. Andrews");
+			var round = new PlayerRound("St. Andrews", currentCourse);
 			PlayerRound.CurrentRound = round;
-			Application.LoadLevel("Andrews1");
+			Application.LoadLevel(currentCourse[0, 0]);
 		}
 	}
 }
