@@ -34,6 +34,7 @@ public class TileHoleController : HoleController
 		var configStr = Resources.Load(resourceName).ToString();
 
 		courseRoot = GameObject.FindWithTag("CourseBase");
+		print(configStr);
 		using(XmlReader reader = XmlReader.Create(new StringReader(configStr))) {
 			if(reader.ReadToFollowing("hole")) {
 				nextLevel = reader.GetAttribute("nextLevel");
