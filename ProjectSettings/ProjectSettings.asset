@@ -90,18 +90,18 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd, type: 3}
-  iPhoneHighResSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPhoneSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb, type: 3}
+  iPhoneHighResSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
-  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
-  iPadPortraitSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPadPortraitSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
-  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
-  iPadLandscapeSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPadLandscapeSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
-  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: feac94278872a4dfdbc1a334d861e8bd,
+  iPadHighResLandscapeSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
