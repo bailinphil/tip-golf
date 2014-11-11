@@ -6,33 +6,31 @@ namespace TipGolf
 {
 public class MainMenuController : MonoBehaviour
 {
-	public GUIText timeText;
 	public Texture logoTexture;
 	public Texture backgroundTexture;
-	public GUIStyle buttonStyle;
+	public GUISkin skin;
 	public ScreenRegion logoRegion;
 	public ScreenRegion playButtonRegion;
+	public ScreenRegion timeTakenRegion;
+	private float timeTaken;
+	public Font timeFont;
+	public Material whiteFontMaterial;
 	private string[,] currentCourse = new string[,] 
 	    { { "TileHole", "StAndrews/Andrews1", "Zig-Zag Box" }
 	    , { "TileHole", "StAndrews/Right-Corner", "Right Corner" }
-	    , { "TileHole", "StAndrews/Inchworm", "Inchworm" }
+	/*, { "TileHole", "StAndrews/Inchworm", "Inchworm" }
 	    , { "TileHole", "StAndrews/Long-Run", "Long Run" }
 	    , { "TileHole", "StAndrews/J", "J" }
 	    , { "TileHole", "StAndrews/Bonk-Line", "Bonk/Line" }
 	    , { "TileHole", "StAndrews/Gambit", "Gambit" }
-	    , { "TileHole", "StAndrews/Maze", "Maze" }
+	    , { "TileHole", "StAndrews/Maze", "Maze" } */
 			};
 
 	void Start()
 	{
-		var timeTaken = PlayerRound.CurrentRound.getCoursePlayerTime();
-		if(timeTaken > 0.0f) {
-			timeText.text = String.Format("Score: {0:0.00}s", timeTaken);
-		}
-	}
-
-	void OnGUI()
-	{
+		
+		timeTaken = PlayerRound.CurrentRound.getCoursePlayerTime();
+		
 		if(!backgroundTexture) {
 			Debug.LogError("Assign a background texture in the editor");
 		}
@@ -42,15 +40,27 @@ public class MainMenuController : MonoBehaviour
 		if(playButtonRegion == null) {
 			Debug.LogError("Assign play button region in the editor");
 		}
-		
+		if(timeTakenRegion == null) {
+			Debug.LogError("Assign time taken button region in the editor");
+		}
+	}
+
+	void OnGUI()
+	{
+		GUI.skin = skin;
+	
 		GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), backgroundTexture, ScaleMode.StretchToFill, false);
 		
 		GUI.DrawTexture(logoRegion.getRect(), logoTexture, ScaleMode.ScaleToFit, true);
 		
-		if(GUI.Button(playButtonRegion.getRect(), "New Game", buttonStyle)) {
+		if(GUI.Button(playButtonRegion.getRect(), "New Game")) {
 			var round = new PlayerRound("St. Andrews", currentCourse);
 			PlayerRound.CurrentRound = round;
 			Application.LoadLevel(currentCourse[0, 0]);
+		}
+		
+		if(timeTaken > 0.0f) {
+			GUI.Label(timeTakenRegion.getRect(), String.Format("That took {0:0.00}s.\nGood job!", timeTaken));
 		}
 	}
 }

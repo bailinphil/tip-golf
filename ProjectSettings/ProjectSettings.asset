@@ -11,12 +11,12 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: bailinphil
-  productName: space-golf
+  productName: tip-golf
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
-  defaultScreenWidthWeb: 960
+  defaultScreenWidthWeb: 400
   defaultScreenHeightWeb: 600
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -56,6 +56,7 @@ PlayerSettings:
   visibleInBackground: 0
   macFullscreenMode: 2
   d3d9FullscreenMode: 1
+  d3d11ForceExclusiveMode: 0
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -95,6 +96,9 @@ PlayerSettings:
     type: 3}
   iPhoneTallHighResSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
+  iPhone47inSplashScreen: {fileID: 0}
+  iPhone55inPortraitSplashScreen: {fileID: 0}
+  iPhone55inLandscapeSplashScreen: {fileID: 0}
   iPadPortraitSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
     type: 3}
   iPadHighResPortraitSplashScreen: {fileID: 2800000, guid: 7711fb308478c40acb9f0ee2fdf59acb,
@@ -114,7 +118,7 @@ PlayerSettings:
     - m_Icon: {fileID: 2800000, guid: e4b08af69cda84590b5ad8abd7e0fb86, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
-  webPlayerTemplate: APPLICATION:Default
+  webPlayerTemplate: APPLICATION:Black Background
   m_TemplateCustomTags: {}
   XboxTitleId: 
   XboxImageXexPath: 
