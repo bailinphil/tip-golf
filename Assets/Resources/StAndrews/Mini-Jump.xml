@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Mini-Jump.csv">
+	<part type="cornerMinusXPlusZ" x="0" y="0" z="0" />
+	<part type="sideMinusX" x="0" y="0" z="-2" />
+	<part type="flat4x4" x="0" y="0" z="-4" />
+	<part type="cornerMinusXPlusZ" x="0" y="-4" z="-10" />
+	<part type="sideMinusX" x="0" y="-4" z="-12" />
+	<part type="cornerMinusXMinusZ" x="0" y="-4" z="-14" />
+	<part type="cornerPlusXPlusZ" x="2" y="0" z="0" />
+	<part type="sidePlusX" x="2" y="0" z="-2" />
+	<part type="cornerPlusXPlusZ" x="2" y="-4" z="-10" />
+	<part type="sidePlusX" x="2" y="-4" z="-12" />
+	<part type="cornerPlusXMinusZ" x="2" y="-4" z="-14" />
+	<part type="goal" x="2" y="-3" z="-14" />
+</hole>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Curls.csv">
+	<part type="flat4x4" x="-6" y="0" z="-4" />
+	<part type="flat4x4" x="-6" y="0" z="-8" />
+	<part type="flat2x2" x="-6" y="0" z="-12" />
+	<part type="flat2x2" x="-4" y="0" z="-12" />
+	<part type="flat2x2" x="-2" y="0" z="2" />
+	<part type="flat2x2" x="-2" y="0" z="0" />
+	<part type="goal" x="-2" y="1" z="0" />
+	<part type="flat2x2" x="-2" y="0" z="-2" />
+	<part type="flat2x2" x="-2" y="0" z="-4" />
+	<part type="flat2x2" x="-2" y="0" z="-6" />
+	<part type="flat2x2" x="-2" y="0" z="-8" />
+	<part type="flat2x2" x="-2" y="0" z="-10" />
+	<part type="flat2x2" x="-2" y="0" z="-12" />
+	<part type="flat2x2" x="0" y="0" z="2" />
+	<part type="cornerMinusXPlusZ" x="0" y="0" z="0" />
+	<part type="sideMinusX" x="0" y="0" z="-2" />
+	<part type="sideMinusX" x="0" y="0" z="-4" />
+	<part type="sideMinusX" x="0" y="0" z="-6" />
+	<part type="flat2x2" x="0" y="0" z="-8" />
+	<part type="flat4x4" x="0" y="0" z="-10" />
+	<part type="flat2x2" x="2" y="0" z="2" />
+	<part type="flat2x2" x="2" y="0" z="0" />
+	<part type="flat2x2" x="2" y="0" z="-2" />
+	<part type="flat2x2" x="2" y="0" z="-4" />
+	<part type="flat2x2" x="2" y="0" z="-6" />
+	<part type="flat2x2" x="2" y="0" z="-8" />
+</hole>

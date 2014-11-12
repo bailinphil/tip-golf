@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<hole name="Diminish.csv">
+	<part type="cornerMinusXPlusZ" x="0" y="0" z="0" />
+	<part type="flat4x4" x="0" y="0" z="-2" />
+	<part type="flat4x4" x="0" y="0" z="-6" />
+	<part type="cornerPlusXPlusZ" x="2" y="0" z="0" />
+	<part type="flat4x4" x="4" y="0" z="-6" />
+	<part type="flat4x4" x="4" y="0" z="-10" />
+	<part type="flat2x2" x="8" y="0" z="-10" />
+	<part type="flat4x4" x="8" y="0" z="-12" />
+	<part type="flat2x2" x="10" y="0" z="-16" />
+	<part type="flat2x2" x="12" y="0" z="-14" />
+	<part type="flat2x2" x="12" y="0" z="-16" />
+	<part type="flat2x2" x="12" y="0" z="-18" />
+	<part type="flat2x2" x="14" y="0" z="-18" />
+	<part type="goal" x="14" y="1" z="-18" />
+</hole>

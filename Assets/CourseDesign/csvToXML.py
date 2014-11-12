@@ -10,11 +10,12 @@ shorthandToPrefabNames = { "CTL": "cornerMinusXPlusZ"
                          , "SR" : "sidePlusX"
                          , "SB" : "sideMinusZ"
                          , "F"  : "flat2x2"
+                         , "F2" : "flat4x4"
                          }
                          
 class Placement:
 	def __init__( self, shorthand ):
-		tileType = shorthand.split( "-" )[0]
+		tileType = shorthand.split( "-" )[0].upper()
 		self.partName = shorthandToPrefabNames[tileType]
 		self.x = 0
 		self.z = 0
@@ -66,6 +67,7 @@ def writeXMLForCsv( inFileName ):
 			outFile.write( str( placement ) )
 			outFile.write( "\n" )
 		outFile.write( "</hole>\n" )
+		print "Completed %s" % os.path.abspath( outFileName )
 
 def computePlacementsFromRows( rows ):
 	# first, find row,col for "START" tile. it will be
@@ -77,7 +79,7 @@ def computePlacementsFromRows( rows ):
 			if len( value.strip() ) > 0:
 				p = Placement( value )
 				# a little weird logic: we know all the prefab
-				# tiles are 2x2 world units. so that's the 2x here.
+				# tiles are based on 2x2 world units. so that's the 2x here.
 				#
 				# also I want the ball to progress downward in game;
 				# that is, starts are generally at the top (in row 0, say)
@@ -87,15 +89,21 @@ def computePlacementsFromRows( rows ):
 				# there is no similar mirroring for left/right. low 
 				# column numbers correspond to negative X values.
 				p.x = 2 * (colIter - startCol)
+				p.y = -4 if "LOW" in value.upper() else 0
 				p.z = 2 * (startRow - rowIter)
 				result.append( p )
 				
-				if value.endswith( "GOAL" ):
+				if value.upper().endswith( "GOAL" ):
 					p2 = Placement( value )
 					p2.partName = "goal"
 					p2.x = 2 * (colIter - startCol)
-					p2.y = 1
+					p2.y = -3 if "LOW" in value.upper() else 1
 					p2.z = 2 * (startRow - rowIter)
+					if "F2" in value.upper():
+						# the 4x4 square should have a goal that is centered in it.
+						# this is a special case, and a little hacky.
+						p2.x += 1
+						p2.z -= 1
 					result.append( p2 )
 				
 	return result
@@ -103,7 +111,7 @@ def computePlacementsFromRows( rows ):
 def findStart( rows ):
 	for rowIter, row in enumerate( rows ):
 		for colIter, value in enumerate( row ):
-			if value.endswith( "-START" ):
+			if value.upper().endswith( "-START" ):
 				return rowIter, colIter
 	raise Error( "Couldn't find start!" )
 

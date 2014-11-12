@@ -9,9 +9,9 @@ namespace TipGolf
 public class TileHoleController : HoleController
 {
 
-	public string holeURL;
 	public GameObject goal;
 	public GameObject flat2x2;
+	public GameObject flat4x4;
 	public GameObject sidePlusX;
 	public GameObject sideMinusX;
 	public GameObject sidePlusZ;
@@ -34,14 +34,13 @@ public class TileHoleController : HoleController
 		var configStr = Resources.Load(resourceName).ToString();
 
 		courseRoot = GameObject.FindWithTag("CourseBase");
-		print(configStr);
 		using(XmlReader reader = XmlReader.Create(new StringReader(configStr))) {
 			if(reader.ReadToFollowing("hole")) {
 				nextLevel = reader.GetAttribute("nextLevel");
 				holeName = reader.GetAttribute("name");
 				loadTiles(reader);
 			} else {
-				throw new ArgumentException("Can't find any parts in " + holeURL);
+				throw new ArgumentException("Can't find any parts in " + resourceName);
 			}
 		}
 	}
@@ -88,6 +87,8 @@ public class TileHoleController : HoleController
 			return goal;
 		case "flat2x2":
 			return flat2x2;
+		case "flat4x4":
+			return flat4x4;
 		case "sidePlusX":
 			return sidePlusX;
 		case "sideMinusX":

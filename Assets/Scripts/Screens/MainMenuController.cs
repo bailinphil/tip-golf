@@ -18,12 +18,17 @@ public class MainMenuController : MonoBehaviour
 	private string[,] currentCourse = new string[,] 
 	    { { "TileHole", "StAndrews/Andrews1", "Zig-Zag Box" }
 	    , { "TileHole", "StAndrews/Right-Corner", "Right Corner" }
-	/*, { "TileHole", "StAndrews/Inchworm", "Inchworm" }
+	    , { "TileHole", "StAndrews/Inchworm", "Inchworm" }
 	    , { "TileHole", "StAndrews/Long-Run", "Long Run" }
 	    , { "TileHole", "StAndrews/J", "J" }
 	    , { "TileHole", "StAndrews/Bonk-Line", "Bonk/Line" }
 	    , { "TileHole", "StAndrews/Gambit", "Gambit" }
-	    , { "TileHole", "StAndrews/Maze", "Maze" } */
+	    , { "TileHole", "StAndrews/Mini-Jump", "Mini Jump" }
+	    , { "TileHole", "StAndrews/Slip", "Slip" }
+	    , { "TileHole", "StAndrews/Diminish", "Diminish" }
+	    , { "TileHole", "StAndrews/Pond", "Pond" }
+	    , { "TileHole", "StAndrews/Curls", "Curls" }
+	    , { "TileHole", "StAndrews/Left-Leap", "Left Leap" }
 			};
 
 	void Start()
