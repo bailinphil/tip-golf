@@ -43,6 +43,7 @@ public class MainMenuController : MonoBehaviour
 		if(timeTakenRegion == null) {
 			Debug.LogError("Assign time taken button region in the editor");
 		}
+		Debug.Log(string.Format("logo texture should be {0}x{1}", logoRegion.getRect().width, logoRegion.getRect().height));
 	}
 
 	void OnGUI()

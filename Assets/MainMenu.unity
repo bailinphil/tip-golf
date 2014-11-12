@@ -189,9 +189,9 @@ MonoBehaviour:
   backgroundTexture: {fileID: 2800000, guid: fce5ccdf30784404d8b61f60c0c6460c, type: 3}
   skin: {fileID: 11400000, guid: 06209839b995a4a0fafdbdd30725129a, type: 2}
   logoRegion:
-    xFraction: 0
+    xFraction: .0500000007
     yFraction: .0500000007
-    widthFraction: 1
+    widthFraction: .899999976
     heightFraction: .300000012
   playButtonRegion:
     xFraction: .100000001

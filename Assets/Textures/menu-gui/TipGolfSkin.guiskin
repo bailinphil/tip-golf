@@ -74,14 +74,14 @@ MonoBehaviour:
   m_button:
     m_Name: button
     m_Normal:
-      m_Background: {fileID: 2800000, guid: 07fb168001f27480b9b11b3081e157e4, type: 3}
-      m_TextColor: {r: .662745118, g: .00392156886, b: .0705882385, a: 1}
+      m_Background: {fileID: 2800000, guid: 39b248f3e83de4a7ebb1add9d4627ba7, type: 3}
+      m_TextColor: {r: .525490224, g: .00392156886, b: .0705882385, a: 1}
     m_Hover:
-      m_Background: {fileID: 11003, guid: 0000000000000000e000000000000000, type: 0}
-      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+      m_Background: {fileID: 2800000, guid: 849e02e3e28984ea5a0728139c43b768, type: 3}
+      m_TextColor: {r: .525490224, g: .00392156886, b: .0705882385, a: 1}
     m_Active:
-      m_Background: {fileID: 11002, guid: 0000000000000000e000000000000000, type: 0}
-      m_TextColor: {r: .899999976, g: .899999976, b: .899999976, a: 1}
+      m_Background: {fileID: 2800000, guid: 3f15cc97bd9be4a399b8b43dc37cffef, type: 3}
+      m_TextColor: {r: .525490224, g: .00392156886, b: .0705882385, a: 1}
     m_Focused:
       m_Background: {fileID: 0}
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
@@ -118,7 +118,7 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 50
     m_FontStyle: 0
     m_Alignment: 4
     m_WordWrap: 0
@@ -236,9 +236,9 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_FontSize: 40
     m_FontStyle: 0
-    m_Alignment: 0
+    m_Alignment: 4
     m_WordWrap: 1
     m_RichText: 1
     m_TextClipping: 1
