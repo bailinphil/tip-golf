@@ -21,6 +21,7 @@ public class MainMenuController : MonoBehaviour
 	    , { "TileHole", "StAndrews/Inchworm", "Inchworm" }
 	    , { "TileHole", "StAndrews/Long-Run", "Long Run" }
 	    , { "TileHole", "StAndrews/J", "J" }
+	    , { "TileHole", "StAndrews/Net", "Safety Net" }
 	    , { "TileHole", "StAndrews/Bonk-Line", "Bonk/Line" }
 	    , { "TileHole", "StAndrews/Gambit", "Gambit" }
 	    , { "TileHole", "StAndrews/Mini-Jump", "Mini Jump" }
@@ -29,6 +30,10 @@ public class MainMenuController : MonoBehaviour
 	    , { "TileHole", "StAndrews/Pond", "Pond" }
 	    , { "TileHole", "StAndrews/Curls", "Curls" }
 	    , { "TileHole", "StAndrews/Left-Leap", "Left Leap" }
+	    , { "TileHole", "StAndrews/Knot", "Knot" }
+	    , { "TileHole", "StAndrews/Side-Ride", "Sider" }
+	    , { "TileHole", "StAndrews/Bender", "Bender" }
+	    , { "TileHole", "StAndrews/Leap-Faith", "Leap of Faith" }
 			};
 
 	void Start()

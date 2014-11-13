@@ -455,6 +455,7 @@ MonoBehaviour:
   nextLevel: MainMenu
   parTime: 0
   holeName: Andrews3
+  boundsPenaltyTime: .5
   goal: {fileID: 100000, guid: bb18d6873a14c4e50b53689a7edaf523, type: 2}
   flat2x2: {fileID: 100000, guid: 0430a42f76dbe400d8202ac070639980, type: 2}
   flat4x4: {fileID: 100002, guid: 3749416d65ba04ea08b773637f0d8db1, type: 2}

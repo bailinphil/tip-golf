@@ -11,6 +11,7 @@ public class HoleController : MonoBehaviour
 	public float parTime;
 	public string holeName;
 	private float timeStarted;
+	public float boundsPenaltyTime;
 
 	public void Start()
 	{
@@ -23,7 +24,7 @@ public class HoleController : MonoBehaviour
 	
 	public void OnOutOfBounds()
 	{
-		PlayerRound.CurrentRound.logTimeTaken(holeName, Time.time - timeStarted);
+		PlayerRound.CurrentRound.logTimeTaken(holeName, boundsPenaltyTime);
 		Application.LoadLevel(Application.loadedLevel);
 	}
 

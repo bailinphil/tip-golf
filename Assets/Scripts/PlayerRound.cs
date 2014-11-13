@@ -23,7 +23,7 @@ public class PlayerRound
 	// all likelihood it's not going to cause any problem.
 	public static PlayerRound CurrentRound = new PlayerRound("one hole test", new string[,]{ {
 		Application.loadedLevelName,
-		"StAndrews/Diminish",
+		"StAndrews/Leap-Faith",
 		"one scene test hole"
 	} });
 	
