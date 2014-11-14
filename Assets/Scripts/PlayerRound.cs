@@ -45,7 +45,7 @@ public class PlayerRound
 		holeNamesToParTimes = new Dictionary<string, float>();
 	}
 
-	public void startHole(string name, float parTime)
+	public void StartHole(string name, float parTime)
 	{
 		/*
 		if(name == null || name.Trim().Length == 0) {

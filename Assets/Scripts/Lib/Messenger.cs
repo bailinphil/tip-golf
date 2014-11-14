@@ -242,6 +242,7 @@ static internal class Messenger
 		#if LOG_ALL_MESSAGES || LOG_BROADCAST_MESSAGE
 		Debug.Log("MESSENGER\t" + System.DateTime.Now.ToString("hh:mm:ss.fff") + "\t\t\tInvoking \t\"" + eventType + "\"");
 		#endif
+
 		OnBroadcasting(eventType);
 		
 		Delegate d;

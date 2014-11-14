@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using Lib;
 
 namespace TipGolf
 {
@@ -15,26 +16,6 @@ public class MainMenuController : MonoBehaviour
 	private float timeTaken;
 	public Font timeFont;
 	public Material whiteFontMaterial;
-	private string[,] currentCourse = new string[,] 
-	    { { "TileHole", "StAndrews/Andrews1", "Zig-Zag Box" }
-	    , { "TileHole", "StAndrews/Right-Corner", "Right Corner" }
-	    , { "TileHole", "StAndrews/Inchworm", "Inchworm" }
-	    , { "TileHole", "StAndrews/Long-Run", "Long Run" }
-	    , { "TileHole", "StAndrews/J", "J" }
-	    , { "TileHole", "StAndrews/Net", "Safety Net" }
-	    , { "TileHole", "StAndrews/Bonk-Line", "Bonk/Line" }
-	    , { "TileHole", "StAndrews/Gambit", "Gambit" }
-	    , { "TileHole", "StAndrews/Mini-Jump", "Mini Jump" }
-	    , { "TileHole", "StAndrews/Slip", "Slip" }
-	    , { "TileHole", "StAndrews/Diminish", "Diminish" }
-	    , { "TileHole", "StAndrews/Pond", "Pond" }
-	    , { "TileHole", "StAndrews/Curls", "Curls" }
-	    , { "TileHole", "StAndrews/Left-Leap", "Left Leap" }
-	    , { "TileHole", "StAndrews/Knot", "Knot" }
-	    , { "TileHole", "StAndrews/Side-Ride", "Sider" }
-	    , { "TileHole", "StAndrews/Bender", "Bender" }
-	    , { "TileHole", "StAndrews/Leap-Faith", "Leap of Faith" }
-			};
 
 	void Start()
 	{
@@ -65,9 +46,7 @@ public class MainMenuController : MonoBehaviour
 		GUI.DrawTexture(logoRegion.getRect(), logoTexture, ScaleMode.ScaleToFit, true);
 		
 		if(GUI.Button(playButtonRegion.getRect(), "New Game")) {
-			var round = new PlayerRound("St. Andrews", currentCourse);
-			PlayerRound.CurrentRound = round;
-			Application.LoadLevel(currentCourse[0, 0]);
+			TipGameController.instance.NewGame();
 		}
 		
 		if(timeTaken > 0.0f) {

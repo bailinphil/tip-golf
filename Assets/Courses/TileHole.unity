@@ -129,6 +129,10 @@ Prefab:
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 1ef1211e56b424a8db3addea24e8d50a, type: 2}
+      propertyPath: m_TagString
+      value: SceneRoot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ef1211e56b424a8db3addea24e8d50a, type: 2}
   m_RootGameObject: {fileID: 981314325}
@@ -452,7 +456,7 @@ GameObject:
   - 114: {fileID: 875845933}
   m_Layer: 0
   m_Name: TileHoleController
-  m_TagString: Untagged
+  m_TagString: SceneRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +539,7 @@ GameObject:
   - 114: {fileID: 981314327}
   m_Layer: 0
   m_Name: TippingWorld
-  m_TagString: Untagged
+  m_TagString: SceneRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
