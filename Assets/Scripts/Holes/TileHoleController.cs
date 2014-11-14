@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Xml;
@@ -25,12 +25,7 @@ public class TileHoleController : HoleController
 	void Start()
 	{
 		base.Start();
-		/*string configStr = "";
-		var configPath = System.IO.Path.Combine(Application.dataPath, "Resources/StAndrews/Andrews3.xml");
-		configStr = System.IO.File.ReadAllText(configPath);
-		Debug.Log(configPath); 
-		*/
-		var resourceName = PlayerRound.CurrentRound.getCurrentHoleConfigResource();
+		var resourceName = TipGameController.instance.GetCurrentHoleConfigResource();
 		var configStr = Resources.Load(resourceName).ToString();
 
 		courseRoot = GameObject.FindWithTag("CourseBase");

@@ -14,8 +14,6 @@ public class HoleController : MonoBehaviour
 
 	public void Start()
 	{
-		Debug.Log("starting hole " + PlayerRound.CurrentRound.getCurrentHoleTitle());
-		PlayerRound.CurrentRound.StartHole(holeName, parTime);
 		Messenger.AddListener("OutOfBounds", OnOutOfBounds);
 		Messenger.AddListener("Goal", OnGoal);
 		timeStarted = Time.time;
@@ -23,13 +21,11 @@ public class HoleController : MonoBehaviour
 		
 	public void OnOutOfBounds()
 	{
-		PlayerRound.CurrentRound.logTimeTaken(PlayerRound.CurrentRound.getCurrentHoleTitle(), boundsPenaltyTime);
-		Application.LoadLevel(Application.loadedLevel);
+		TipGameController.instance.OnOutOfBounds();
 	}
 		
 	public void OnGoal()
 	{
-		PlayerRound.CurrentRound.logTimeTaken(holeName, Time.time - timeStarted);
 		TipGameController.instance.OnHoleComplete();
 	}
 }
