@@ -20,7 +20,9 @@ public class TileHoleController : HoleController
 	public GameObject cornerPlusXMinusZ;
 	public GameObject cornerMinusXPlusZ;
 	public GameObject cornerMinusXMinusZ;
+	public Texture lowTileFloorTexture;
 	private GameObject courseRoot;
+	
 
 	void Start()
 	{
@@ -54,6 +56,15 @@ public class TileHoleController : HoleController
 		float x = 0.0f, y = 0.0f, z = 0.0f;
 		readXYZAttributes(reader, out x, out y, out z);
 		var newTile = (GameObject)Instantiate(getTileForType(part), new Vector3(x, y, z), Quaternion.identity);
+		if(y < 0) {
+			// tiles that are "low" in the configuration should have a distinct texture 
+			// find the "floor" object and give it a yellow texture
+			foreach(Transform child in newTile.transform) {
+				if(child.tag == "Floor") {
+					child.gameObject.renderer.material.mainTexture = lowTileFloorTexture;
+				}
+			}
+		}
 		newTile.transform.parent = courseRoot.transform;
 	}
 

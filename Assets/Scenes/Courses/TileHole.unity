@@ -472,12 +472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e349331a2ab4ffcbdd0a0931c4a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: MainMenu
   parTime: 0
   holeName: Andrews3
   boundsPenaltyTime: .5
   goal: {fileID: 100000, guid: bb18d6873a14c4e50b53689a7edaf523, type: 2}
-  flat2x2: {fileID: 100000, guid: 0430a42f76dbe400d8202ac070639980, type: 2}
+  flat2x2: {fileID: 100002, guid: 0430a42f76dbe400d8202ac070639980, type: 2}
   flat4x4: {fileID: 100002, guid: 3749416d65ba04ea08b773637f0d8db1, type: 2}
   sidePlusX: {fileID: 100004, guid: db93a0fc1be8e48f491b3da7fe816d1f, type: 2}
   sideMinusX: {fileID: 100004, guid: 1ad05c884fd3a4f498e7fa372e5669ad, type: 2}
@@ -487,6 +486,7 @@ MonoBehaviour:
   cornerPlusXMinusZ: {fileID: 100004, guid: f9f9c189761fe42d09d381d0091bf953, type: 2}
   cornerMinusXPlusZ: {fileID: 100006, guid: 02a23c13f088746f2abc29f43097298d, type: 2}
   cornerMinusXMinusZ: {fileID: 100006, guid: 865859c1bb261433aaf86880b5c0ed9e, type: 2}
+  lowTileFloorTexture: {fileID: 2800000, guid: 8884de702725942de8ba63fea1a550a0, type: 3}
 --- !u!4 &875845934
 Transform:
   m_ObjectHideFlags: 0
