@@ -50,7 +50,7 @@ def main():
 			raise e
 
 def writeXMLForCsv( inFileName ):
-	outFileName = "../../Scratch/" + inFileName.replace( ".csv", ".xml" )
+	outFileName = "../Scratch/" + inFileName.replace( ".csv", ".xml" )
 	with open(outFileName, "w") as outFile:
 		rows = []			
 		with open(inFileName, 'rU') as csvFile:
