@@ -21,12 +21,12 @@ public class HoleController : MonoBehaviour
 		
 	public void OnOutOfBounds()
 	{
-		TipGameController.instance.OnOutOfBounds();
+		TipGameController.GetInstance().OnOutOfBounds();
 	}
 		
 	public void OnGoal()
 	{
-		TipGameController.instance.OnHoleComplete();
+		TipGameController.GetInstance().OnHoleComplete();
 	}
 }
 }

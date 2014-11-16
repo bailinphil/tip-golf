@@ -27,7 +27,7 @@ public class TileHoleController : HoleController
 	void Start()
 	{
 		base.Start();
-		var resourceName = TipGameController.instance.GetCurrentHoleConfigResource();
+		var resourceName = TipGameController.GetInstance().GetCurrentHoleConfigResource();
 		var configStr = Resources.Load(resourceName).ToString();
 
 		courseRoot = GameObject.FindWithTag("CourseBase");

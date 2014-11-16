@@ -12,15 +12,9 @@ namespace TipGolf
  *  3. Playing music or other tasks that should continue continuously
  *  4. Handling configuration
  */
-
 public class TipGameController : MonoBehaviour
 {
 
-	// It's a little tricky to pass references to the controllers of scenes, menus, and 
-	// the like. Therefore, I'm using this master controller as a pseudo-singleton: 
-	// there is a public static reference to a particular instance, but no guarantees 
-	// made that it will actually be the only one. In practice, this is true though.
-	public static TipGameController instance;
 	private string[,] currentCourse = new string[,] 
 		{ { "TileHole", "StAndrews/Andrews1", "Zig-Zag Box" }
 		, { "TileHole", "StAndrews/Right-Corner", "Right Corner" }
@@ -46,10 +40,23 @@ public class TipGameController : MonoBehaviour
 	
 	// This variable will be initialized when we start a new game
 	private PlayerRound currentRound = null;
+	
+	// It's a little tricky to pass references to the controllers of scenes, menus, and 
+	// the like. Therefore, I'm using this master controller as a singleton.
+	private static TipGameController instance = null;
+
+	public static TipGameController GetInstance()
+	{
+		if(instance == null) {
+			Debug.Log("invoking constructor because null");
+			instance = new TipGameController();
+		}
+		return instance;
+	}
 
 	void Awake()
 	{
-		// pseudo-singleton, see above.
+		Debug.Log("awake");
 		instance = this;
 		
 		// the main game controller (this object) needs to persist in order to orchestrate the
@@ -106,12 +113,20 @@ public class TipGameController : MonoBehaviour
 	// accessor is used to fetch that configuration.
 	public string GetCurrentHoleConfigResource()
 	{
-		return currentRound.GetCurrentHoleConfigResource();
+		if(currentRound == null) {
+			throw new UnityException("can't get config resource because a game has not started yet.");
+		} else {
+			return currentRound.GetCurrentHoleConfigResource();
+		}
 	}
 	
 	public float GetCoursePlayerTime()
 	{
-		return currentRound.GetCoursePlayerTime();
+		if(currentRound == null) {
+			return 0.0f;
+		} else {
+			return currentRound.GetCoursePlayerTime();
+		}
 	}
 }
 }

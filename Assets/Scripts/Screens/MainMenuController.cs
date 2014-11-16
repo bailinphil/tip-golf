@@ -20,7 +20,7 @@ public class MainMenuController : MonoBehaviour
 	void Start()
 	{
 		
-		timeTaken = TipGameController.instance.GetCoursePlayerTime();
+		timeTaken = TipGameController.GetInstance().GetCoursePlayerTime();
 		
 		if(!backgroundTexture) {
 			Debug.LogError("Assign a background texture in the editor");
@@ -46,7 +46,7 @@ public class MainMenuController : MonoBehaviour
 		GUI.DrawTexture(logoRegion.getRect(), logoTexture, ScaleMode.ScaleToFit, true);
 		
 		if(GUI.Button(playButtonRegion.getRect(), "New Game")) {
-			TipGameController.instance.OnNewGame();
+			TipGameController.GetInstance().OnNewGame();
 		}
 		
 		if(timeTaken > 0.0f) {
