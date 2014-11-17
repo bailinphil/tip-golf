@@ -39,6 +39,6 @@
 	<part type="sidePlusX" x="2" y="0" z="-34" />
 	<part type="sideMinusZ" x="2" y="0" z="-36" />
 	<part type="flat2x2" x="4" y="0" z="-34" />
-	<part type="goal" x="4" y="1" z="-34" />
+	<part type="goal" x="4" y="0" z="-34" />
 	<part type="sidePlusX" x="4" y="0" z="-36" />
 </hole>

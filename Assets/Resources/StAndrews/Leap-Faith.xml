@@ -8,7 +8,7 @@
 	<part type="sideMinusX" x="-2" y="-4" z="-26" />
 	<part type="sideMinusX" x="-2" y="-4" z="-28" />
 	<part type="cornerMinusXMinusZ" x="-2" y="-4" z="-30" />
-	<part type="goal" x="-2" y="-3" z="-30" />
+	<part type="goal" x="-2" y="-4" z="-30" />
 	<part type="cornerPlusXPlusZ" x="0" y="0" z="0" />
 	<part type="sideMinusX" x="0" y="0" z="-10" />
 	<part type="cornerPlusXPlusZ" x="0" y="-4" z="-24" />

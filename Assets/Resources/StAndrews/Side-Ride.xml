@@ -30,7 +30,7 @@
 	<part type="flat2x2" x="0" y="0" z="-12" />
 	<part type="flat2x2" x="0" y="0" z="-14" />
 	<part type="flat2x2" x="0" y="0" z="-16" />
-	<part type="goal" x="0" y="1" z="-26" />
+	<part type="goal" x="0" y="0" z="-26" />
 	<part type="sideMinusZ" x="0" y="0" z="-26" />
 	<part type="sideMinusX" x="2" y="0" z="0" />
 	<part type="sideMinusX" x="2" y="0" z="-2" />

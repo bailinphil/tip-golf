@@ -6,7 +6,7 @@
 	<part type="flat2x2" x="-4" y="0" z="-12" />
 	<part type="flat2x2" x="-2" y="0" z="2" />
 	<part type="flat2x2" x="-2" y="0" z="0" />
-	<part type="goal" x="-2" y="1" z="0" />
+	<part type="goal" x="-2" y="0" z="0" />
 	<part type="flat2x2" x="-2" y="0" z="-2" />
 	<part type="flat2x2" x="-2" y="0" z="-4" />
 	<part type="flat2x2" x="-2" y="0" z="-6" />

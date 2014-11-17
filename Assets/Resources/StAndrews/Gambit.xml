@@ -39,7 +39,7 @@
 	<part type="flat2x2" x="10" y="0" z="-16" />
 	<part type="sideMinusZ" x="10" y="0" z="-18" />
 	<part type="cornerPlusXPlusZ" x="12" y="0" z="-14" />
-	<part type="goal" x="12" y="1" z="-14" />
+	<part type="goal" x="12" y="0" z="-14" />
 	<part type="flat2x2" x="12" y="0" z="-16" />
 	<part type="sideMinusZ" x="12" y="0" z="-18" />
 </hole>

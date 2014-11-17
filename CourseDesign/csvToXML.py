@@ -97,7 +97,7 @@ def computePlacementsFromRows( rows ):
 					p2 = Placement( value )
 					p2.partName = "goal"
 					p2.x = 2 * (colIter - startCol)
-					p2.y = -3 if "LOW" in value.upper() else 1
+					p2.y = -4 if "LOW" in value.upper() else 0
 					p2.z = 2 * (startRow - rowIter)
 					if "F2" in value.upper():
 						# the 4x4 square should have a goal that is centered in it.

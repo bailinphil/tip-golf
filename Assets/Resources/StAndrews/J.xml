@@ -4,7 +4,7 @@
 	<part type="flat4x4" x="-10" y="0" z="-14" />
 	<part type="flat4x4" x="-10" y="0" z="-18" />
 	<part type="flat2x2" x="-6" y="0" z="-10" />
-	<part type="goal" x="-6" y="1" z="-10" />
+	<part type="goal" x="-6" y="0" z="-10" />
 	<part type="flat2x2" x="-6" y="0" z="-12" />
 	<part type="flat2x2" x="-6" y="0" z="-14" />
 	<part type="flat2x2" x="-6" y="0" z="-16" />

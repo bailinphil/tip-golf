@@ -26,7 +26,7 @@
 	<part type="sidePlusZ" x="0" y="0" z="2" />
 	<part type="cornerMinusXMinusZ" x="0" y="0" z="0" />
 	<part type="cornerPlusXMinusZ" x="0" y="0" z="-2" />
-	<part type="goal" x="0" y="1" z="-2" />
+	<part type="goal" x="0" y="0" z="-2" />
 	<part type="sidePlusX" x="0" y="0" z="-4" />
 	<part type="flat2x2" x="0" y="0" z="-6" />
 	<part type="cornerMinusXMinusZ" x="0" y="0" z="-8" />
