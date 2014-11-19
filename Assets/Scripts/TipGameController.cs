@@ -64,6 +64,8 @@ public class TipGameController : MonoBehaviour
 		// garbage collection. But this GameObject should remain, to manage the transitions
 		// between screens and holes.
 		DontDestroyOnLoad(transform.gameObject);
+		
+		Application.targetFrameRate = 60;
 	}
 	
 	void Start()
