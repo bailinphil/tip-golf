@@ -57,7 +57,6 @@ public class PlayerRound
 	
 	public string GetCurrentHoleSceneName()
 	{
-		Debug.Log("current index " + currentHoleIndex + " out of " + courseHoles.GetUpperBound(0));
 		if(currentHoleIndex <= courseHoles.GetUpperBound(0)) {
 			return courseHoles[currentHoleIndex, 0];
 		}

@@ -245,9 +245,9 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
-    m_Strength: 1
+    m_Strength: .200000003
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
@@ -419,7 +419,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: .897160232, g: 1, b: .426470578, a: 1}
+  m_Color: {r: .764705896, g: 1, b: .941582203, a: 1}
   m_Intensity: 1.13
   m_Range: 10
   m_SpotAngle: 30
@@ -475,6 +475,9 @@ MonoBehaviour:
   parTime: 0
   holeName: Andrews3
   boundsPenaltyTime: .5
+  lowRoll: {fileID: 8300000, guid: 2b5abd79001304539a532670b00a25bc, type: 3}
+  medRoll: {fileID: 8300000, guid: 6e41c6e319c884a8e8679440e5f19f0a, type: 3}
+  highRoll: {fileID: 8300000, guid: 724d8b3897a034491969114087ee253f, type: 3}
   goal: {fileID: 100002, guid: bb18d6873a14c4e50b53689a7edaf523, type: 2}
   flat2x2: {fileID: 100002, guid: 0430a42f76dbe400d8202ac070639980, type: 2}
   flat4x4: {fileID: 100002, guid: 3749416d65ba04ea08b773637f0d8db1, type: 2}
