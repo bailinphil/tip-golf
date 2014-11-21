@@ -11,12 +11,12 @@ public class Player : MonoBehaviour
 	protected GameObject medSource;
 	protected GameObject highSource;
 
-	protected bool touchingFloor;	
+	protected float timeOfLastFloorCollision = 0.0f;	
+	public float silenceDelay = 0.1f;
 
 	// Use this for initialization
 	void Start()
 	{
-		touchingFloor = true;
 		lowSource = new GameObject();
 		lowSource.AddComponent("AudioSource");
 		lowSource.audio.clip = lowRoll;
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		var playerSpeed = rigidbody.velocity.magnitude;
-		if(!touchingFloor || playerSpeed < 0.1f) {
+		if(!isCurrentlyOnFloor() || playerSpeed < 0.1f) {
 			lowSource.audio.volume = 0.0f;
 			medSource.audio.volume = 0.0f;
 			highSource.audio.volume = 0.0f;
@@ -66,11 +66,17 @@ public class Player : MonoBehaviour
 		}
 	}
 	
+	public bool isCurrentlyOnFloor()
+	{
+		var z = transform.localPosition.z;
+		return ((z < -0.95 && z > -1.05) || (z > 2.95 && z < 3.05));
+	}
+	
 	public void OnCollisionEnter(Collision other)
 	{
 		Debug.Log(string.Format("enter with {0}", other.gameObject.tag));
 		if(other.gameObject.tag == "Floor") {
-			touchingFloor = true;
+			timeOfLastFloorCollision = Time.time;
 		}
 	}
 	
@@ -78,7 +84,7 @@ public class Player : MonoBehaviour
 	{
 		Debug.Log(string.Format("exit with {0}", other.gameObject.tag));
 		if(other.gameObject.tag == "Floor") {
-			touchingFloor = false;
+			timeOfLastFloorCollision = Time.time;
 		}
 	}
 }
