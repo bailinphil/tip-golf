@@ -56,7 +56,6 @@ public class TipGameController : MonoBehaviour
 
 	void Awake()
 	{
-		Debug.Log("awake");
 		instance = this;
 		
 		// the main game controller (this object) needs to persist in order to orchestrate the

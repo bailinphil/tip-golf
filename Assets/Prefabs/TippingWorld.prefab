@@ -60,6 +60,7 @@ GameObject:
   - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,7 +99,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: TippingWorld
-  m_TagString: Untagged
+  m_TagString: SceneRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -4.53485584, y: 6.25225163, z: -2.27030873}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -248,7 +249,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .191176474, g: .131394044, b: .0534169599, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -451,6 +452,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00c4016eb604468ea80949ed2a094ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09ccbd90656d4d99901f1796c432168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowRoll: {fileID: 8300000, guid: 2b5abd79001304539a532670b00a25bc, type: 3}
+  medRoll: {fileID: 8300000, guid: 6e41c6e319c884a8e8679440e5f19f0a, type: 3}
+  highRoll: {fileID: 8300000, guid: 724d8b3897a034491969114087ee253f, type: 3}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
