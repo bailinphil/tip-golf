@@ -61,7 +61,7 @@ public class TileHoleController : HoleController
 			// find the "floor" object and give it a yellow texture
 			foreach(Transform child in newTile.transform) {
 				if(child.tag == "Floor") {
-					child.gameObject.renderer.material.mainTexture = lowTileFloorTexture;
+					child.gameObject.GetComponent<Renderer>().material.mainTexture = lowTileFloorTexture;
 				}
 			}
 		}

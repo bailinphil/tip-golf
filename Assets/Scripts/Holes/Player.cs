@@ -21,24 +21,24 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		lowSource = new GameObject();
-		lowSource.AddComponent("AudioSource");
-		lowSource.audio.clip = lowRoll;
-		lowSource.audio.loop = true;
-		lowSource.audio.volume = 0.0f;
-		lowSource.audio.Play();
+		lowSource.AddComponent<AudioSource>();
+		lowSource.GetComponent<AudioSource>().clip = lowRoll;
+		lowSource.GetComponent<AudioSource>().loop = true;
+		lowSource.GetComponent<AudioSource>().volume = 0.0f;
+		lowSource.GetComponent<AudioSource>().Play();
 		medSource = new GameObject();
-		medSource.AddComponent("AudioSource");
-		medSource.audio.clip = medRoll;
-		medSource.audio.loop = true;
-		medSource.audio.volume = 0.0f;
-		medSource.audio.Play();
+		medSource.AddComponent<AudioSource>();
+		medSource.GetComponent<AudioSource>().clip = medRoll;
+		medSource.GetComponent<AudioSource>().loop = true;
+		medSource.GetComponent<AudioSource>().volume = 0.0f;
+		medSource.GetComponent<AudioSource>().Play();
 		highSource = new GameObject();
-		highSource.AddComponent("AudioSource");
-		highSource.audio.clip = highRoll;
-		lowSource.audio.volume = 0.0f;
-		highSource.audio.loop = true;
-		highSource.audio.volume = 0.0f;
-		highSource.audio.Play();
+		highSource.AddComponent<AudioSource>();
+		highSource.GetComponent<AudioSource>().clip = highRoll;
+		lowSource.GetComponent<AudioSource>().volume = 0.0f;
+		highSource.GetComponent<AudioSource>().loop = true;
+		highSource.GetComponent<AudioSource>().volume = 0.0f;
+		highSource.GetComponent<AudioSource>().Play();
 		
 		
 	}
@@ -46,27 +46,27 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		var playerSpeed = rigidbody.velocity.magnitude;
+		var playerSpeed = GetComponent<Rigidbody>().velocity.magnitude;
 		if(!isCurrentlyOnFloor() || playerSpeed < 0.1f) {
-			lowSource.audio.volume = 0.0f * rollVolumeFactor;
-			medSource.audio.volume = 0.0f * rollVolumeFactor;
-			highSource.audio.volume = 0.0f * rollVolumeFactor;
+			lowSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			medSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			highSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 1.0f) {
-			lowSource.audio.volume = playerSpeed * rollVolumeFactor;
-			medSource.audio.volume = 0.0f * rollVolumeFactor;
-			highSource.audio.volume = 0.0f * rollVolumeFactor;
+			lowSource.GetComponent<AudioSource>().volume = playerSpeed * rollVolumeFactor;
+			medSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			highSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 3.0f) {
-			lowSource.audio.volume = 1.0f * rollVolumeFactor;
-			medSource.audio.volume = 0.0f * rollVolumeFactor;
-			highSource.audio.volume = 0.0f * rollVolumeFactor;
+			lowSource.GetComponent<AudioSource>().volume = 1.0f * rollVolumeFactor;
+			medSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			highSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 5.0f) {
-			lowSource.audio.volume = 0.0f * rollVolumeFactor;
-			medSource.audio.volume = 1.0f * rollVolumeFactor;
-			highSource.audio.volume = 0.0f * rollVolumeFactor;
+			lowSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			medSource.GetComponent<AudioSource>().volume = 1.0f * rollVolumeFactor;
+			highSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
 		} else {
-			lowSource.audio.volume = 0.0f * rollVolumeFactor;
-			medSource.audio.volume = 0.0f * rollVolumeFactor;
-			highSource.audio.volume = 1.0f * rollVolumeFactor;
+			lowSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			medSource.GetComponent<AudioSource>().volume = 0.0f * rollVolumeFactor;
+			highSource.GetComponent<AudioSource>().volume = 1.0f * rollVolumeFactor;
 		}
 	}
 	
@@ -84,12 +84,12 @@ public class Player : MonoBehaviour
 		}
 		if(other.gameObject.tag == "Wall") {
 			if(Random.value > 0.5) {
-				audio.clip = bonk1;
+				GetComponent<AudioSource>().clip = bonk1;
 			} else {
-				audio.clip = bonk2;
+				GetComponent<AudioSource>().clip = bonk2;
 			}
-			audio.volume = bonkVolumeFactor;
-			audio.Play();
+			GetComponent<AudioSource>().volume = bonkVolumeFactor;
+			GetComponent<AudioSource>().Play();
 		}
 	}
 	
