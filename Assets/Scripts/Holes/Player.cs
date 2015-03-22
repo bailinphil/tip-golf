@@ -4,14 +4,17 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 
+	public float rollVolumeFactor = 0.0f;
+	public float bonkVolumeFactor = 1.0f;
 	public AudioClip lowRoll;
 	public AudioClip medRoll;
 	public AudioClip highRoll;
+	public AudioClip bonk1;
+	public AudioClip bonk2;
 	protected GameObject lowSource;
 	protected GameObject medSource;
 	protected GameObject highSource;
-
-	protected float timeOfLastFloorCollision = 0.0f;	
+	protected float timeOfLastFloorCollision = 0.0f;
 	public float silenceDelay = 0.1f;
 
 	// Use this for initialization
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour
 		highSource.audio.volume = 0.0f;
 		highSource.audio.Play();
 		
+		
 	}
 	
 	// Update is called once per frame
@@ -44,25 +48,25 @@ public class Player : MonoBehaviour
 	{
 		var playerSpeed = rigidbody.velocity.magnitude;
 		if(!isCurrentlyOnFloor() || playerSpeed < 0.1f) {
-			lowSource.audio.volume = 0.0f;
-			medSource.audio.volume = 0.0f;
-			highSource.audio.volume = 0.0f;
+			lowSource.audio.volume = 0.0f * rollVolumeFactor;
+			medSource.audio.volume = 0.0f * rollVolumeFactor;
+			highSource.audio.volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 1.0f) {
-			lowSource.audio.volume = playerSpeed;
-			medSource.audio.volume = 0.0f;
-			highSource.audio.volume = 0.0f;
+			lowSource.audio.volume = playerSpeed * rollVolumeFactor;
+			medSource.audio.volume = 0.0f * rollVolumeFactor;
+			highSource.audio.volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 3.0f) {
-			lowSource.audio.volume = 1.0f;
-			medSource.audio.volume = 0.0f;
-			highSource.audio.volume = 0.0f;
+			lowSource.audio.volume = 1.0f * rollVolumeFactor;
+			medSource.audio.volume = 0.0f * rollVolumeFactor;
+			highSource.audio.volume = 0.0f * rollVolumeFactor;
 		} else if(playerSpeed < 5.0f) {
-			lowSource.audio.volume = 0.0f;
-			medSource.audio.volume = 1.0f;
-			highSource.audio.volume = 0.0f;
+			lowSource.audio.volume = 0.0f * rollVolumeFactor;
+			medSource.audio.volume = 1.0f * rollVolumeFactor;
+			highSource.audio.volume = 0.0f * rollVolumeFactor;
 		} else {
-			lowSource.audio.volume = 0.0f;
-			medSource.audio.volume = 0.0f;
-			highSource.audio.volume = 1.0f;
+			lowSource.audio.volume = 0.0f * rollVolumeFactor;
+			medSource.audio.volume = 0.0f * rollVolumeFactor;
+			highSource.audio.volume = 1.0f * rollVolumeFactor;
 		}
 	}
 	
@@ -77,6 +81,15 @@ public class Player : MonoBehaviour
 		Debug.Log(string.Format("enter with {0}", other.gameObject.tag));
 		if(other.gameObject.tag == "Floor") {
 			timeOfLastFloorCollision = Time.time;
+		}
+		if(other.gameObject.tag == "Wall") {
+			if(Random.value > 0.5) {
+				audio.clip = bonk1;
+			} else {
+				audio.clip = bonk2;
+			}
+			audio.volume = bonkVolumeFactor;
+			audio.Play();
 		}
 	}
 	
